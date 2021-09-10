@@ -8,7 +8,7 @@ return(
   
           
  
-  <table class="show-cart table">
+  <table className="show-cart table">
      <tbody>
     {
     cartItems.cartItems.map((item, i) => {
