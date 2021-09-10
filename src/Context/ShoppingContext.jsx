@@ -11,12 +11,21 @@ const ShoppingContextProvider = ({ children }) => {
   const addItemToCart = item => {
     dispatch({
       type: 'ADD_ITEM',
-      payload: item
+      payload: { item }
+    });
+  };
+
+  const incrementCount = name => {
+    dispatch({
+      type: 'INCREMENT_COUNT',
+      payload: { name }
     });
   };
 
   return (
-    <ShoppingContext.Provider value={{ cartItems, addItemToCart }}>
+    <ShoppingContext.Provider
+      value={{ cartItems, addItemToCart, incrementCount }}
+    >
       {children}
     </ShoppingContext.Provider>
   );
