@@ -1,9 +1,9 @@
 import React, { useState, useContext } from 'react';
 import { ShoppingContext } from './Context/ShoppingContext';
 
-
 const Navbar = ({ handleShowCart }) => {
   const cartItems = useContext(ShoppingContext);
+
   const itemCount = () => {
     let itemCount = cartItems.cartItems
       .map(item => item.count)

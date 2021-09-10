@@ -2,10 +2,12 @@ import Items from '../Items';
 
 const reducer = (state, action) => {
   let items = [];
+
   switch (action.type) {
     case 'ADD_ITEM':
-      Items = [action.payload.item, ...state];
+      Items = [...state, action.payload.item];
       return Items;
+
     case 'INCREMENT_COUNT':
       let newItems = [...state].map(item => {
         if (item.name === action.payload) {
@@ -13,7 +15,9 @@ const reducer = (state, action) => {
         }
         return item;
       });
+
       return newItems;
+
     default:
       return state;
   }

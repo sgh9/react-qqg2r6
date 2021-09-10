@@ -11,10 +11,8 @@ import ItemList from './ItemList';
 
 export default function App() {
   const [show, setShow] = useState(false);
-  const [cart, setCart] = useState([{}]);
-  const cartItems = useContext(ShoppingContext);
+  const { cartItems } = useContext(ShoppingContext);
 
-  console.log('cart context:', cartItems);
   const reset = () => {
     setShow(false);
   };

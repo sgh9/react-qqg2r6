@@ -16,7 +16,7 @@ const Item = ({ src, title, price }) => {
 
     let selectedItem = {
       name: name,
-      price: price,
+      price: +price,
       count: 1
     };
     cartItems.addItemToCart(selectedItem);
