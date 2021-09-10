@@ -7,15 +7,12 @@ const Item = ({ src, title, price }) => {
 
   const handleAddToCart = e => {
     let { name, price } = itemRef.current?.dataset;
-    console.log('name', name);
-    // for (let item in cartItems.cartItems) {
-    //   if (cartItems.cartItems[item].name === name) {
-    //     cartItems.incrementCount(name);
-
-    //     console.log('name', name);
-    //     return;
-    //   }
-    // }
+    for (let item in cartItems.cartItems) {
+      if (cartItems.cartItems[item].name === name) {
+        cartItems.incrementCount(name);
+        return;
+      }
+    }
 
     let selectedItem = {
       name: name,

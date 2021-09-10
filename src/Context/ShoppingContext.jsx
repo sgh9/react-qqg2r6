@@ -18,7 +18,7 @@ const ShoppingContextProvider = ({ children }) => {
   const incrementCount = name => {
     dispatch({
       type: 'INCREMENT_COUNT',
-      payload: { name }
+      payload: name
     });
   };
 

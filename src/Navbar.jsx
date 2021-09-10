@@ -1,8 +1,16 @@
 import React, { useState, useContext } from 'react';
 import { ShoppingContext } from './Context/ShoppingContext';
 
+
 const Navbar = ({ handleShowCart }) => {
   const cartItems = useContext(ShoppingContext);
+  const itemCount = () => {
+    let itemCount = cartItems.cartItems
+      .map(item => item.count)
+      .reduce((acc, item) => (acc += item), 0);
+
+    return itemCount;
+  };
 
   return (
     <nav className="navbar navbar-dark bg-dark fixed-top bg-faded">
@@ -17,8 +25,7 @@ const Navbar = ({ handleShowCart }) => {
             data-toggle="modal"
             data-target="#cart"
           >
-            Cart (
-            <span className="total-count">{cartItems.cartItems.length}</span>)
+            Cart (<span className="total-count">{itemCount()}</span>)
           </button>
           <button className="clear-cart btn btn-danger">Clear Cart</button>
         </div>

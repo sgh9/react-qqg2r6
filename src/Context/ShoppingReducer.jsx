@@ -7,14 +7,13 @@ const reducer = (state, action) => {
       Items = [action.payload.item, ...state];
       return Items;
     case 'INCREMENT_COUNT':
-      console.log(action.payload.name, 'item name After incrementCount');
-      items = [...state].map(item => {
-        if (item.name === action.payload.name) {
+      let newItems = [...state].map(item => {
+        if (item.name === action.payload) {
           return { ...item, count: item.count + 1 };
         }
+        return item;
       });
-      console.log(items, 'items  After incrementCount');
-      return Items;
+      return newItems;
     default:
       return state;
   }

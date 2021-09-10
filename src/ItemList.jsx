@@ -1,10 +1,10 @@
 import React, { useState, useContext } from 'react';
 import { ShoppingContext } from './Context/ShoppingContext';
 
-const ItemList = ({ item }) => {
+const ItemList = () => {
   const cartItems = useContext(ShoppingContext);
   const [count, setCount] = useState(0);
-  console.log(cartItems);
+
   return (
     <table className="show-cart table">
       <tbody>
