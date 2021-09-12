@@ -5,8 +5,8 @@ const reducer = (state, action) => {
 
   switch (action.type) {
     case 'ADD_ITEM':
-      Items = [...state, action.payload.item];
-      return Items;
+      items = [...state, action.payload.item];
+      return items;
 
     case 'INCREMENT_COUNT':
       let newItems = [...state].map(item => {

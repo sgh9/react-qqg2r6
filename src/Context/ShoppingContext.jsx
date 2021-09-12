@@ -1,11 +1,7 @@
 import React, { createContext, useReducer, useEffect } from 'react';
 import shoppingReducer from './ShoppingReducer';
 
-let initialItems = [
-  { name: 'Orange', price: 0.5, count: 1 },
-  { name: 'Lemon', price: 5, count: 1 },
-  { name: 'Banana', price: 1.22, count: 1 }
-];
+let initialItems = [];
 
 export const ShoppingContext = createContext(initialItems);
 
